@@ -1,0 +1,29 @@
+{{>header}}
+
+<h1>Seja Bem vindo !!</h1>
+
+{{#mostar}}
+<p>Nome: {{nome}} - Idade : {{idade}}</p>
+{{/mostar}}
+
+<ul>
+
+{{#ingredientes}}
+<li>{{nome}} -- {{qt}}</li>
+{{/ingredientes}}
+
+</ul>
+{{^ingredientes}}
+<p>Nao ha ingredientes</p>
+{{/ingredientes}}
+
+<ul>
+{{#interesses}}
+<li> {{.}}</li>
+{{/interesses}}
+
+</ul>
+
+{{{teste}}}
+
+{{!comentario do mustache}}
