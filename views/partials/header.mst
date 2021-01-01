@@ -18,5 +18,18 @@
 <li><a href="{{slug}}">{{name}}</a></li>
 {{/h.menu}}
 </ul>
+
+{{#flashes}}
+    {{#success}}
+        <div>{{.}}</div>
+    {{/success}}
+    {{#error}}
+        <div>{{.}}</div>
+    {{/error}}
+    {{#info}}
+        <div>{{.}}</div>
+    {{/info}}
+{{/flashes}}
+
 </body>
 </html>

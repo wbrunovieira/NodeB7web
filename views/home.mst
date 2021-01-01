@@ -2,28 +2,12 @@
 
 <h1>Seja Bem vindo !!</h1>
 
-{{#mostar}}
-<p>Nome: {{nome}} - Idade : {{idade}}</p>
-{{/mostar}}
+{{#posts}}
 
-<ul>
+<h3><a href="/post/{{slug}}">{{title}}</a></h3>
+<p>{{body}}</p>
+<hr/>
 
-{{#ingredientes}}
-<li>{{nome}} -- {{qt}}</li>
-{{/ingredientes}}
+{{/posts}}
 
-</ul>
-{{^ingredientes}}
-<p>Nao ha ingredientes</p>
-{{/ingredientes}}
 
-<ul>
-{{#interesses}}
-<li> {{.}}</li>
-{{/interesses}}
-
-</ul>
-
-{{{teste}}}
-
-{{!comentario do mustache}}

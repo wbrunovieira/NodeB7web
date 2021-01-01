@@ -1,4 +1,4 @@
-const app = require('./app');
+
 const mongoose = require('mongoose');
 
 require('dotenv').config({path:'variables.env'});
@@ -9,7 +9,12 @@ mongoose.connect(process.env.DATABASE, { useNewUrlParser: true , useUnifiedTopol
 mongoose.Promise = global.Promise;
 mongoose.connection.on('error', (error)=>{
     console.error("ERRO: "+error.message);
-})
+});
+
+//Carrregando os models
+require('./models/Post');
+
+const app = require('./app');
 
 app.set('port', process.env.PORT || 7777);
 
