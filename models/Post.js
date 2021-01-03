@@ -4,6 +4,7 @@ const slug = require('slug');
 mongoose.Promise = global.Promise;
 
 const postSchema = new mongoose.Schema({
+    photo:String,
     title: {
         type: String,
         trim: true,
@@ -14,9 +15,12 @@ const postSchema = new mongoose.Schema({
         type: String,
         trim: true
     },
-    tags: [String]
+    tags: [String],
+
+    add_at: {type: Date, default: Date.now()}
 
 });
+
 
 postSchema.pre('save', function(next){
     if(this.isModified('title')){

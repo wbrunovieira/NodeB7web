@@ -2,7 +2,12 @@
 
 <h2>Adicionar Post</h2>
 
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
+<label>
+    Imagem:
+    <input type="file" name="photo"/>
+</label>
+<br/>
     <label>
     Titulo:
     <input type="text" name="title"/>
@@ -14,8 +19,9 @@
     </label>
     
     <label>
-    Tags:
-   
+    Tags: <small>(Separar as tags com virgula)</small>
+    <input type="text" name="tags" />
+    
     </label>
     
     

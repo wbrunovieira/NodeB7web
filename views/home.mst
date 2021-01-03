@@ -3,10 +3,14 @@
 <h1>Seja Bem vindo !!</h1>
 
 {{#posts}}
-
-<h3><a href="/post/{{slug}}">{{title}}</a></h3>
-<p>{{body}}</p>
-<hr/>
+<div class="post">
+    {{#photo}}
+    <img src="/media/{{photo}}" />
+    {{/photo}}
+    <h3><a href="/post/{{slug}}">{{title}}</a></h3>
+    <p>{{body}}</p>
+    <a href="/post/{{slug}}/edit">[ editar ]</a> 
+</div>
 
 {{/posts}}
 
