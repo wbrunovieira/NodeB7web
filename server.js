@@ -10,6 +10,7 @@ mongoose.connect(process.env.DATABASE, {
      useUnifiedTopology: true,
      useFindAndModify: false
 });
+mongoose.set('useCreateIndex', true);
 mongoose.Promise = global.Promise;
 mongoose.connection.on('error', (error)=>{
     console.error("ERRO: "+error.message);
