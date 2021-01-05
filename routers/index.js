@@ -8,6 +8,10 @@ const imageMiddleware = require('../middlelwares/imagesMiddleware');
 const router = express.Router();
 router.get('/',homeController.index);
 router.get('/users/login',userController.login);
+router.post('/users/login',userController.loginAction);
+router.get('/users/login',userController.logout);
+
+
 router.get('/users/register',userController.register);
 router.post('/users/register', userController.registerAction);
 

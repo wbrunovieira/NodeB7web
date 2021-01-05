@@ -1,18 +1,18 @@
 
 <html>
 <head>
-{{#pageTitle}}
-<title>{{pageTitle}}</title>
-{{/pageTitle}}
-{{^pageTitle}}
-<title>{{h.defaultPageTitle}}</title>
-{{/pageTitle}}
+<title>{{pageTitle}} {{h.defaultPageTile}}</title>
 
 <link rel="stylesheet" href="/assets/css/template.css" />
 </head>
 <body>
 <header>
     <h1> Cabecallo </h1>
+    
+{{#user}}
+  Ola  {{user.name}} Voce foi logado com sucesso !!<a href="/users/logout">Sair</a>
+{{/user}}
+ 
 
     <ul>
     {{#h.menu}}
