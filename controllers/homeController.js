@@ -10,17 +10,17 @@ exports.index = async (req, res) => {
        
     };
 
-   console.log(req.user)
+   
 
      responseJson.tag = req.query.t;
 const postFilter = (typeof responseJson.tag != 'undefined') ? { tags:responseJson.tag }: {}
 
     const tagsPromise =  Post.getTagsList();
-    const postsPromise =  Post.find(postFilter);
+    const postsPromise =  Post.findPosts(postFilter);
 
     const [tags, posts] = await Promise.all([tagsPromise, postsPromise]);
 
-    
+    console.log(posts[0]);
 
     for(let i in tags){
        if(tags[i]._id == responseJson.tag){
