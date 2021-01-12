@@ -7,10 +7,10 @@
 </head>
 <body>
 <header>
-    <h1> Cabecallo </h1>
+    <h1> Cabecalho </h1>
 
 {{#user}}
-  Ola  {{user.name}} ! Voce foi logado com sucesso!!  <a href="/users/logout">Sair</a>
+  Ola  <a href="/profile">{{user.name}}</a> ! Voce foi logado com sucesso!!  <a href="/users/logout">Sair</a>
 {{/user}}
  
 

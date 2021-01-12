@@ -44,3 +44,25 @@ exports.registerAction = (req, res) => {
     });
 
 }
+
+exports.profile = (req, res) => {
+    res.render('/profile');
+}
+
+exports.profileAction = async (req, res) => {
+    try {
+
+    const user = await User.findOneAndUpdate(
+        { _id: req.user._id },
+        { name: req.body.name, email: req.body.email },
+        { new: true, runValidators:true }
+    );
+    }catch(e){
+        req.flash('error', 'Ocorreu um erro'+e.message);
+        res.redirect('/profile');
+        return;
+
+    }
+    req.flash('success', 'Dados atualizados com sucesso');
+    res.redirect('/profile');
+};

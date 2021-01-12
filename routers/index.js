@@ -17,6 +17,9 @@ router.get('/users/logout',userController.logout);
 router.get('/users/register',userController.register);
 router.post('/users/register', userController.registerAction);
 
+router.get('/profile', authMiddleware.islogged, userController.profile);
+router.post('/profile', authMiddleware.islogged, userController.profileAction);
+
 router.get('/post/add', authMiddleware.islogged, postController.add);
 router.post('/post/add', 
     authMiddleware.islogged,
