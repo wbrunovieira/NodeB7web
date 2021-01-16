@@ -46,7 +46,7 @@ exports.registerAction = (req, res) => {
 }
 
 exports.profile = (req, res) => {
-    res.render('/profile');
+    res.render('profile');
 }
 
 exports.profileAction = async (req, res) => {

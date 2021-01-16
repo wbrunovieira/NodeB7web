@@ -20,6 +20,8 @@ router.post('/users/register', userController.registerAction);
 router.get('/profile', authMiddleware.islogged, userController.profile);
 router.post('/profile', authMiddleware.islogged, userController.profileAction);
 
+router.post('/profile/password',authMiddleware.islogged, authMiddleware.changePassword);
+
 router.get('/post/add', authMiddleware.islogged, postController.add);
 router.post('/post/add', 
     authMiddleware.islogged,
