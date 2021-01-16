@@ -5,7 +5,9 @@ mongoose.Promise = global.Promise;
 
 const userSchema = new mongoose.Schema({ 
     name:String,
-    emai:String
+    emai:String,
+    resetPasswordToken: String,
+    resetPasswordExpires: Date,
 });
 
 userSchema.plugin(passportLocalMongoose, { usernameField: 'email' });
