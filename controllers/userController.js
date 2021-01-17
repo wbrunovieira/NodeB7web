@@ -1,5 +1,6 @@
 const User = require('../models/User');
 const crypto = require('crypto');
+const mailHandler = require('../handlers/mailHandler');
 
 exports.login = (req, res) => {
     res.render('login');
@@ -87,7 +88,18 @@ exports.forgetAction = async (req, res) => {
 
     const resetLink = `http://${req.headers.host}/users/reset/${user.resetPasswordToken}`;
 
-    req.flash('success', 'Enviamos um email com Instrucoes'+resetLink);
+    const html = `Testanto email com link<br><a href="${resetLink}">Resetar a sua senha`;
+    const to = `${user.name} <${user.email}>`;
+    const text = `Testando email com link: ${resetLink}`;
+
+    mailHandler.send({
+        to,
+        subject:'Resetar a sua senha',
+        html,
+        text
+    });
+
+    req.flash('success', 'Enviamos um email com Instrucoes');
     res.redirect('/users/login');
 
 };
