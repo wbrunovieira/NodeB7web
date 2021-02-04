@@ -7,7 +7,37 @@
     <title>Chat</title>
 </head>
 <body>
-    <h1>Chat</h1>
+     
+    <div class="page" id="loginPage">
+        <h1>Qual e o seu nome ?</h1>
+        <input type="text" id="loginNameInput" />
+    </div>
+
+    <div class="page" id="chatPage">
+
+        <div name="chatArea">
+                <ul class="chatList">
+                    <li class="m-status">Fulano entrou na sala</li>
+                    <li class="m-status">Fulano saiu na sala</li>
+                    <li class="m-txt"><span class="me">Bruno</span> Oi, tudo bem ?</li>
+                    <li class="m-txt"><span>Stephanie</span>  tudo bem, e voce ?</li>
+                </ul> 
+                <ul class="userList">
+                    <li>Bruno (Voce)</li>
+                    <li>Gabriel</li>
+                    <li>Stephanie</li>
+                </ul> 
+
+                
+            </div>
+            <div name="chatInput">
+
+                <input type="text" id="chatTextInput" placeholder="Digite uma mensagem e aperte enter"/>
+            </div>
+      
+    </div>
     
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/main.js"></script>
 </body>
 </html>
