@@ -9,32 +9,21 @@
 <body>
      
     <div class="page" id="loginPage">
-        <h1>Qual e o seu nome ?</h1>
+        <h1>Qual seu nome ?</h1>
         <input type="text" id="loginNameInput" />
     </div>
 
     <div class="page" id="chatPage">
-
-        <div name="chatArea">
-                <ul class="chatList">
-                    <li class="m-status">Fulano entrou na sala</li>
-                    <li class="m-status">Fulano saiu na sala</li>
-                    <li class="m-txt"><span class="me">Bruno</span> Oi, tudo bem ?</li>
-                    <li class="m-txt"><span>Stephanie</span>  tudo bem, e voce ?</li>
-                </ul> 
-                <ul class="userList">
-                    <li>Bruno (Voce)</li>
-                    <li>Gabriel</li>
-                    <li>Stephanie</li>
-                </ul> 
-
-                
-            </div>
-            <div name="chatInput">
-
-                <input type="text" id="chatTextInput" placeholder="Digite uma mensagem e aperte enter"/>
-            </div>
-      
+        <div class="chatArea">
+            <ul class="chatList"> </ul>
+            <ul class="userList"> </ul>
+            
+        </div>
+        <div class="chatInput">
+            <input type="text" id="chatTextInput" placeholder="Digite uma mensagem (e aperte ENTER)" />
+        </div>
+        
+    
     </div>
     
     <script src="/socket.io/socket.io.js"></script>
